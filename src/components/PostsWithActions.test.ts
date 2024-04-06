@@ -1,16 +1,16 @@
-import {flushPromises, mount, renderToString} from '@vue/test-utils';
+import {flushPromises, mount} from '@vue/test-utils';
 import PostsWithActions from './PostsWithActions.vue';
 import {test, expect} from 'vitest';
-
-const TestComponent = {
-  components: {PostsWithActions},
-  template: '<Suspense><PostsWithActions/></Suspense>'
-};
+import {createPinia} from 'pinia';
 
 let wrapper;
 
 beforeEach(async () => {
-  wrapper = mount(TestComponent);
+  wrapper = mount(PostsWithActions, {
+    global: {
+      plugins: [createPinia()]
+    }
+  })
 
   await flushPromises();
 })
@@ -45,7 +45,7 @@ describe('Posts are reorder', () => {
     const post5Controls = post5.findAll('[data-test="post-control"]');
     expect(post5Controls.length).toEqual(1);
     await post5Controls[0].trigger('click');
-    const expectedOrder = ['Post 2', 'Post 1', 'Post 3', 'Post 5', 'Post 4'];
+    const expectedOrder = ['Post 1', 'Post 2', 'Post 3', 'Post 5', 'Post 4'];
     posts = wrapper.findAll('[data-test="post"]');
     posts.forEach((post, index) => {
       expect(post.text()).toContain(expectedOrder[index]);

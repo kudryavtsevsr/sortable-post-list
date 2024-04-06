@@ -11,8 +11,6 @@ import Actions from './Actions.vue';
 </script>
 
 <style scoped lang="scss">
-@use "@/assets/styles/variables" as *;
-
 .posts-with-actions {
   position: relative;
   width: 800px;
@@ -21,7 +19,7 @@ import Actions from './Actions.vue';
   font-family: sans-serif;
   grid-template-columns: 313px 360px;
   column-gap: 67px;
-  color: #4B4B4B;
-  background: #F6F6F6 linear-gradient(to right bottom, #6357B1 0%, #6357B1 50%, transparent 50%) no-repeat top left/98% 160px;
+  color: $color-text-main;
+  background: $color-background-alt linear-gradient(to right bottom, $color-accent-main 0%, $color-accent-main 50%, transparent 50%) no-repeat top left/98% 160px;
 }
 </style>

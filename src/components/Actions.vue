@@ -3,6 +3,11 @@
     <h3 class="actions-header">List of actions committed</h3>
     <div class="action-list">
       <Transition>
+        <div v-if="!hasActions">
+          No actions
+        </div>
+      </Transition>
+      <Transition>
         <div v-if="hasActions" class="action-list-inner" key="1">
           <TransitionGroup>
             <div class="action" v-for="(action, index) in actions" :key="index">
@@ -12,11 +17,6 @@
               </button>
             </div>
           </TransitionGroup>
-        </div>
-      </Transition>
-      <Transition>
-        <div v-if="!hasActions">
-          No actions
         </div>
       </Transition>
     </div>
@@ -33,14 +33,12 @@ const { timeTravel } = store
 </script>
 
 <style scoped lang="scss">
-@use "@/assets/styles/variables" as *;
-
 .actions {
   height: fit-content;
   border-radius: $border-radius;
   border: $border;
   box-shadow: $box-shadow;
-  background-color: #fff;
+  background-color: $color-background-secondary;
 }
 
 .actions-header {
@@ -50,7 +48,7 @@ const { timeTravel } = store
 
 .action-list {
   padding: 15px;
-  background-color: #F5F5F5;
+  background-color: $color-background-main;
 }
 
 .action-list-inner {
@@ -58,7 +56,7 @@ const { timeTravel } = store
   border: $border;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  background: #fff;
+  background: $color-background-secondary;
 }
 
 .action {
@@ -78,9 +76,9 @@ const { timeTravel } = store
   padding: 10px 18px;
   margin-left: 15px;
   border: none;
-  background-color: #25FF90;
+  background-color: $color-accent-secondary;
   cursor: pointer;
   border-radius: $border-radius;
-  color: #4B4B4B;
+  color: $color-text-main;
 }
 </style>

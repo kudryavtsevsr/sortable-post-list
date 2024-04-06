@@ -10,6 +10,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "@/assets/styles/variables" as *;'
+      }
+    }
+  },
   test: {
     globals: true,
     environment: 'jsdom',

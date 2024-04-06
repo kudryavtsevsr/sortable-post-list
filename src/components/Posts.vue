@@ -31,15 +31,13 @@
 </script>
 
 <style scoped lang="scss">
-@use "@/assets/styles/variables" as *;
-
 .posts {
 }
 
 .posts-header {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #fff;
+  color: $color-text-inverse;
 }
 
 .post-list {
@@ -52,7 +50,7 @@
   display: flex;
   align-items: center;
   padding: 10px 6px 10px 10px;
-  background-color: #fff;
+  background-color: $color-background-secondary;
   height: 65px;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
@@ -73,7 +71,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #6357B1;
+  color: $color-accent-main;
 
   img {
     height: 10px;

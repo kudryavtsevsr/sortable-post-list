@@ -3,13 +3,13 @@
     <div class="posts">
       <h3 class="posts-header">Sortable Post List</h3>
       <TransitionGroup tag="div" class="post-list">
-        <div class="post" v-for="(post, index) in posts" :key="post.id">
+        <div class="post" data-test="post" v-for="(post, index) in posts" :key="post.id">
           Post {{ post.id }}
           <div class="controls">
-            <button class="control up" v-if="index !== 0" @click="movePostUp(index)">
+            <button class="control up" v-if="index !== 0" data-test="post-control" @click="movePostUp(index)">
               <img src="../assets/icons/up.svg" alt="up">
             </button>
-            <button class="control down" v-if="index !== posts.length - 1" @click="movePostDown(index)">
+            <button class="control down" v-if="index !== posts.length - 1" data-test="post-control" @click="movePostDown(index)">
               <img src="../assets/icons/up.svg" alt="up">
             </button>
           </div>

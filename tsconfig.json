@@ -5,6 +5,7 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "types": ["vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -20,6 +21,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "node_modules/.pnpm/vitest@1.4.0_happy-dom@14.3.10_jsdom@24.0.0_sass@1.72.0/node_modules/vitest/globals.d.ts",
+    "node_modules/.pnpm/vitest@1.4.0_happy-dom@14.3.10_jsdom@24.0.0_sass@1.72.0/node_modules/vitest/globals.d.ts",
+    "node_modules/.pnpm/vitest@1.4.0_happy-dom@14.3.10_jsdom@24.0.0_sass@1.72.0/node_modules/vitest/globals.d.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,5 +1,7 @@
 # Sortable post list
 
+**[Demo](https://kudryavtsevsr.github.io/sortable-post-list/)**
+
 ## Used technologies
 Vue 3, Vite, Vitest, Mock Service Worker, Pinia, Sass
 
